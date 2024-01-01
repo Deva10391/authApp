@@ -3,11 +3,13 @@ import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRoutes from './route/user.route.js';
 import authRoutes from './route/auth.route.js';
+import cookieParser from 'cookie-parser';
 dotenv.config();
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose
     .connect(process.env.MONGO_URI || 'mongodb+srv://devashish15262:authP123@auth.jfurpdt.mongodb.net/authP123?retryWrites=true&w=majority')
