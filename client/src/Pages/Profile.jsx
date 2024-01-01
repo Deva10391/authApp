@@ -4,6 +4,7 @@ import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/
 import { app } from '../firebase';
 import { updateUserStart, updateUserSuccess, updateUserFailure, deleteUserFailure, deleteUserStart, deleteUserSuccess, signOutUserStart, signOutUserFailure, signOutUserSuccess } from '../redux/user/userSlice';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 export default function Profile() {
   const { currentUser, loading, error } = useSelector((state) => state.user);
@@ -14,6 +15,8 @@ export default function Profile() {
   const [formData, setFormData] = useState({});
   const dispatch = useDispatch();
   const [updateSuccess, setUpdateSuccess] = useState(false);
+  const [showListingErrors, setShowListingErrors] = useState(false);
+  const [userListings, setUserListings] = useState([]);
 
   const handleFileUpload = (file) => {
     const storage = getStorage(app);
@@ -133,7 +136,6 @@ export default function Profile() {
         <input type="password" id='password' placeholder='password' className='border p-3 rounded-lg' onChange={handleChange} />
 
         <button type='submit' disabled={loading} className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'>{loading ? 'Loading ...' : 'Update'}</button>
-        
       </form>
 
       <div className='flex justify-between mt-5'>
@@ -143,6 +145,7 @@ export default function Profile() {
 
       <p className='text-red-700 mt-5'>{error ? error : <></>}</p>
       <p className='text-green-700 mt-5'>{updateSuccess === true ? 'user updated successfully' : <></>}</p>
+
     </div>
   )
 }
