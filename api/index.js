@@ -23,7 +23,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 mongoose
-    .connect(process.env.MONGO_URI || 'mongodb+srv://devashish15262:authP123@auth.jfurpdt.mongodb.net/authP123?retryWrites=true&w=majority')
+    .connect(process.env.MONGO_URI || 'mongodb+srv://devashish15262:authP123@auth.jfurpdt.mongodb.net/auth?retryWrites=true&w=majority')
     .then(() => {
         console.log('Connected')
     })
