@@ -68,7 +68,8 @@ export const google = async (req, res, next) => {
                 username: req.body.name.split(" ").join("").toLowerCase() + Math.random().toString(36).slice(-4),
                 email: req.body.email,
                 password: hashedP(generatedPassword),
-                avatar: req.body.photo
+                avatar: req.body.photo,
+                firebaseUid: req.body.uid,
             });
 
             await newUser.save();

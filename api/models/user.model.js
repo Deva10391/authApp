@@ -27,6 +27,11 @@ const userSchema = new mongoose.Schema({
                 : "https://scflyers.org/wp-content/uploads/sites/2434/2020/10/vf-coaches-avatar.png";
         },
     },
+    firebaseUid: {
+        type: String,
+        unique: true,
+        sparse: true,
+    },
 }, { timestamps: true });
 
 const User = mongoose.model('User', userSchema);
