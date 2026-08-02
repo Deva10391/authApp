@@ -27,11 +27,7 @@ This application is intended as a starting point for building full-stack web app
 
 1. Clone the repo:
    ```
-<<<<<<< HEAD
    git clone https://github.com/deva10391/authApp
-=======
-   git clone <repo-url>
->>>>>>> e0eb34337e88f275785469df98931bab859de249
    cd authApp
    ```
 
