@@ -11,7 +11,6 @@ export const verifiedToken = (req, res, next) => {
             return next(errorHandler(403, 'Forbidden'));
         }
         req.user = user;
-        console.log('done:', user);
         next();
     });
 };
