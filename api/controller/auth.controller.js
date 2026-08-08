@@ -12,8 +12,6 @@ export const signUp = async (req, res, next) => {
     const { username, email, password, gender } = req.body;
     const newUser = new User({ username, email, password: hashedP(password), gender });
 
-    console.log(newUser);
-
     try {
         await newUser.save();
         res.status(201).json('user created successfully');
