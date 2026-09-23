@@ -24,26 +24,19 @@ This application is intended as a starting point for building full-stack web app
 - **Auth:** JSON Web Tokens (JWT), bcryptjs, Firebase Authentication, Firebase Admin SDK
 
 ## Setup
-
-1. Clone the repo:
-   ```
-   git clone https://github.com/deva10391/authApp
-   cd authApp
-   ```
-
-2. Install dependencies:
+1. Install dependencies:
    ```
    npm install
    cd client && npm install && cd ..
    ```
 
-3. Create a `.env` file in the root directory:
+2. Create a `.env` file in the root directory:
    ```
    MONGO_URI=<your MongoDB connection string>
    JWT_SECRET=<any secret string>
    ```
 
-4. Create `client/src/firebase.js` with your Firebase project config:
+3. Create `client/src/firebase.js` with your Firebase project config:
    ```js
    import { initializeApp } from "firebase/app";
 
@@ -60,9 +53,9 @@ This application is intended as a starting point for building full-stack web app
    export default app;
    ```
 
-5. Add `api/firebaseServiceAccount.json` — your Firebase Admin service account key (Firebase Console → Project Settings → Service Accounts → Generate new private key).
+4. Add `api/firebaseServiceAccount.json` — your Firebase Admin service account key (Firebase Console → Project Settings → Service Accounts → Generate new private key).
 
-6. Run the app:
+5. Run the app:
    ```
    npm run dev
    ```
