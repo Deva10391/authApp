@@ -49,8 +49,8 @@ Express, Mongoose, jsonwebtoken, bcryptjs, cookie-parser, Firebase Auth + Admin 
    CLIENT_X509_CERT_URL=<>
 ```
  
-4. Add values of `<name>.json` — your Firebase Admin service account key (Firebase Console → Project Settings → Service Accounts → Generate new private key) — to the .env too; with PRIVATE_KEY in double quotes
-5. Run the app:
+3. Add values of `<name>.json` — your Firebase Admin service account key (Firebase Console → Project Settings → Service Accounts → Generate new private key) — to the .env too; with PRIVATE_KEY in double quotes
+4. Run the app:
 ```
    npm run dev
 ```
