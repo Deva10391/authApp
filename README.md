@@ -31,26 +31,25 @@ Express, Mongoose, jsonwebtoken, bcryptjs, cookie-parser, Firebase Auth + Admin 
 ```
    MONGO_URI=<your MongoDB connection string>
    JWT_SECRET=<any secret string>
+
+   FIREBASE_API_KEY=<>
+   FIREBASE_AUTH_DOMAIN=<>
+   FIREBASE_PROJECT_ID=<>
+   FIREBASE_STORAGE_BUCKET=<>
+   FIREBASE_MESSAGING_SENDER_ID=<>
+   FIREBASE_APP_ID=<>
+   MEASUREMENT_ID=<>
+
+   PROJECT_ID=<>
+   PRIVATE_KEY_ID=<>
+   PRIVATE_KEY=<>
+   CLIENT_EMAIL=<>
+   CLIENT_ID=<>
+   AUTH_PROVIDER_X509_CERT_URL=<>
+   CLIENT_X509_CERT_URL=<>
 ```
  
-3. Create `client/src/firebase.js` with your Firebase project config:
-```js
-   import { initializeApp } from "firebase/app";
- 
-   const firebaseConfig = {
-     apiKey: "...",
-     authDomain: "...",
-     projectId: "...",
-     storageBucket: "...",
-     messagingSenderId: "...",
-     appId: "...",
-   };
- 
-   const app = initializeApp(firebaseConfig);
-   export default app;
-```
- 
-4. Add `api/firebaseServiceAccount.json` — your Firebase Admin service account key (Firebase Console → Project Settings → Service Accounts → Generate new private key).
+4. Add values of `<name>.json` — your Firebase Admin service account key (Firebase Console → Project Settings → Service Accounts → Generate new private key) — to the .env too; with PRIVATE_KEY in double quotes
 5. Run the app:
 ```
    npm run dev
